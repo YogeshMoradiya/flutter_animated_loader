@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_loader/flutter_animated_loader.dart';
+import 'package:flutter_modern_animated_loader/flutter_animated_loader.dart';
 
 const Color _kAppColor = Color(0xFF1C1C1E);
 const double _kSize = 80;

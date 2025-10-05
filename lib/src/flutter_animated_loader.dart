@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_loader/src/arc_trio/arc_trio.dart';
-import 'package:flutter_animated_loader/src/aurora_wave/aurora_wave.dart';
-import 'package:flutter_animated_loader/src/bounce_ball/bounce_ball.dart';
-import 'package:flutter_animated_loader/src/color_flicker/color_flicker.dart';
-import 'package:flutter_animated_loader/src/double_arc/double_arc.dart';
-import 'package:flutter_animated_loader/src/gravity_drop/gravity_drop.dart';
-import 'package:flutter_animated_loader/src/heart_beat/heart_beat.dart';
-import 'package:flutter_animated_loader/src/hexa_spin/hexa_spin.dart';
-import 'package:flutter_animated_loader/src/horizontal_spin/horizontal_spin.dart';
-import 'package:flutter_animated_loader/src/pulse_track/pulse_track.dart';
-import 'package:flutter_animated_loader/src/quad_spin/quad_spin.dart';
-import 'package:flutter_animated_loader/src/ring_pulse/ring_pulse.dart';
-import 'package:flutter_animated_loader/src/splash_drop/splash_drop.dart';
-import 'package:flutter_animated_loader/src/stagger_wave/stagger_wave.dart';
-import 'package:flutter_animated_loader/src/stretch_pulse/stretch_pulse.dart';
-import 'package:flutter_animated_loader/src/tri_spin/tri_spin.dart';
-import 'package:flutter_animated_loader/src/triangle_orbit/triangle_orbit.dart';
-import 'package:flutter_animated_loader/src/triangular_dot/triangular_dot.dart';
-import 'package:flutter_animated_loader/src/twist_orbit/twist_orbit.dart';
+import 'package:flutter_modern_animated_loader/src/arc_trio/arc_trio.dart';
+import 'package:flutter_modern_animated_loader/src/aurora_wave/aurora_wave.dart';
+import 'package:flutter_modern_animated_loader/src/bounce_ball/bounce_ball.dart';
+import 'package:flutter_modern_animated_loader/src/color_flicker/color_flicker.dart';
+import 'package:flutter_modern_animated_loader/src/double_arc/double_arc.dart';
+import 'package:flutter_modern_animated_loader/src/gravity_drop/gravity_drop.dart';
+import 'package:flutter_modern_animated_loader/src/heart_beat/heart_beat.dart';
+import 'package:flutter_modern_animated_loader/src/hexa_spin/hexa_spin.dart';
+import 'package:flutter_modern_animated_loader/src/horizontal_spin/horizontal_spin.dart';
+import 'package:flutter_modern_animated_loader/src/pulse_track/pulse_track.dart';
+import 'package:flutter_modern_animated_loader/src/quad_spin/quad_spin.dart';
+import 'package:flutter_modern_animated_loader/src/ring_pulse/ring_pulse.dart';
+import 'package:flutter_modern_animated_loader/src/splash_drop/splash_drop.dart';
+import 'package:flutter_modern_animated_loader/src/stagger_wave/stagger_wave.dart';
+import 'package:flutter_modern_animated_loader/src/stretch_pulse/stretch_pulse.dart';
+import 'package:flutter_modern_animated_loader/src/tri_spin/tri_spin.dart';
+import 'package:flutter_modern_animated_loader/src/triangle_orbit/triangle_orbit.dart';
+import 'package:flutter_modern_animated_loader/src/triangular_dot/triangular_dot.dart';
+import 'package:flutter_modern_animated_loader/src/twist_orbit/twist_orbit.dart';
+
 import 'newton_swing/newton_swing.dart';
 
 class FlutterAnimatedLoader {

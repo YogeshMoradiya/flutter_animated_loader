@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_loader/src/util/animation_controller_utils.dart';
+import 'package:flutter_modern_animated_loader/src/util/animation_controller_utils.dart';
 import '../widgets/draw_dot.dart';
 
 class BounceBall extends StatefulWidget {
