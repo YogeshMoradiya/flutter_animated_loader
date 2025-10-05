@@ -21,7 +21,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_animated_loader: <latest_version>
+  flutter_modern_animated_loader: <latest_version>
 ```  
 
 ### 2. Install it You can install packages from the command line: 
@@ -39,7 +39,7 @@ $ flutter pub get
 Now in your `Dart` code, you can use :
 
 ```
-import 'package:flutter_animated_loader/flutter_animated_loader.dart';
+import 'package:flutter_modern_animated_loader/flutter_animated_loader.dart';
 ```
 ### 4. Use it
 
