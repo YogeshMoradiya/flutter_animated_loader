@@ -1,6 +1,7 @@
 name: flutter_animated_loader
 description: "flutter_animated_loader is a Flutter package providing 20+ modern, customizable loading animations, including spinning dots, bouncing balls, arcs, pulse effects, and more, for mobile and web apps."
 issue_tracker: https://github.com/YogeshMoradiya/flutter_animated_loader/issues
+homepage: https://github.com/YogeshMoradiya/flutter_animated_loader/blob/master/example/main.dart
 version: 0.0.1
 
 # The following defines the version and build number for your application.
