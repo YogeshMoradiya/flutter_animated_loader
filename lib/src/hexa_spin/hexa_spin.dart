@@ -35,20 +35,20 @@ class BuildSpinnerState extends State<HexaSpin>
   }
 
   Widget _buildInitialDot(double angle, Interval interval) => BuildDot.first(
-    size: widget.size,
-    color: widget.color,
-    angle: angle,
-    controller: _animationController,
-    interval: interval,
-  );
+        size: widget.size,
+        color: widget.color,
+        angle: angle,
+        controller: _animationController,
+        interval: interval,
+      );
 
   Widget _buildLaterDot(double angle, Interval interval) => BuildDot.second(
-    size: widget.size,
-    color: widget.color,
-    angle: angle,
-    controller: _animationController,
-    interval: interval,
-  );
+        size: widget.size,
+        color: widget.color,
+        angle: angle,
+        controller: _animationController,
+        interval: interval,
+      );
 
   @override
   Widget build(BuildContext context) {

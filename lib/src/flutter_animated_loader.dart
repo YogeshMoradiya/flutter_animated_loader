@@ -20,8 +20,8 @@ import 'package:flutter_animated_loader/src/triangular_dot/triangular_dot.dart';
 import 'package:flutter_animated_loader/src/twist_orbit/twist_orbit.dart';
 import 'newton_swing/newton_swing.dart';
 
-class LoadingAnimationWidget {
-  LoadingAnimationWidget._();
+class FlutterAnimatedLoader {
+  FlutterAnimatedLoader._();
 
   /// A ball falls inside a ring cut out when face up and falls when face down.
   /// Required color is applied to the ring and dot.

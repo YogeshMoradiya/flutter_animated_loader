@@ -10,9 +10,9 @@ class DrawDot extends StatelessWidget {
     super.key,
     required double dotSize,
     required this.color,
-  }) : width = dotSize,
-       height = dotSize,
-       circular = true;
+  })  : width = dotSize,
+        height = dotSize,
+        circular = true;
 
   const DrawDot.elliptical({
     super.key,

@@ -36,20 +36,22 @@ class PulseTrackState extends State<PulseTrack>
     final double previousDotPosition = -(gapBetweenDots + dotSize);
 
     Widget translatingDot() => Transform.translate(
-      offset: _animationController.eval(
-        Tween<Offset>(begin: Offset.zero, end: Offset(previousDotPosition, 0)),
-        curve: const Interval(0.22, 0.82),
-      ),
-      child: DrawDot.circular(dotSize: dotSize, color: color),
-    );
+          offset: _animationController.eval(
+            Tween<Offset>(
+                begin: Offset.zero, end: Offset(previousDotPosition, 0)),
+            curve: const Interval(0.22, 0.82),
+          ),
+          child: DrawDot.circular(dotSize: dotSize, color: color),
+        );
 
     Widget scalingDot(bool scaleDown, Interval interval) => Transform.scale(
-      scale: _animationController.eval(
-        Tween<double>(begin: scaleDown ? 1.0 : 0.0, end: scaleDown ? 0.0 : 1.0),
-        curve: interval,
-      ),
-      child: DrawDot.circular(dotSize: dotSize, color: color),
-    );
+          scale: _animationController.eval(
+            Tween<double>(
+                begin: scaleDown ? 1.0 : 0.0, end: scaleDown ? 0.0 : 1.0),
+            curve: interval,
+          ),
+          child: DrawDot.circular(dotSize: dotSize, color: color),
+        );
 
     return SizedBox(
       width: size,

@@ -28,17 +28,19 @@ class AuroraWaveState extends State<AuroraWave>
     required Offset begin,
     required Offset end,
     required Interval interval,
-  }) => Transform.translate(
-    offset: _controller.eval(
-      Tween<Offset>(begin: begin, end: end),
-      curve: interval,
-    ),
-    child: Container(
-      width: widget.size / 5,
-      height: widget.size / 5,
-      decoration: BoxDecoration(shape: BoxShape.circle, color: widget.color),
-    ),
-  );
+  }) =>
+      Transform.translate(
+        offset: _controller.eval(
+          Tween<Offset>(begin: begin, end: end),
+          curve: interval,
+        ),
+        child: Container(
+          width: widget.size / 5,
+          height: widget.size / 5,
+          decoration:
+              BoxDecoration(shape: BoxShape.circle, color: widget.color),
+        ),
+      );
 
   Widget _buildBottomDot({required double begin, required double end}) {
     final double offset = -widget.size / 8;

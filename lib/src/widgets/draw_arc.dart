@@ -14,13 +14,14 @@ class Arc extends CustomPainter {
     required double strokeWidth,
     required double startAngle,
     required double endAngle,
-  }) => SizedBox(
-    width: size,
-    height: size,
-    child: CustomPaint(
-      painter: Arc._(color, strokeWidth, startAngle, endAngle),
-    ),
-  );
+  }) =>
+      SizedBox(
+        width: size,
+        height: size,
+        child: CustomPaint(
+          painter: Arc._(color, strokeWidth, startAngle, endAngle),
+        ),
+      );
 
   @override
   void paint(Canvas canvas, Size size) {

@@ -182,8 +182,7 @@ class QuadSpinState extends State<QuadSpin>
                   end: 0.36,
                 ),
                 child: _animatingDots(
-                  visible:
-                      _animationController.value >= 0.18 &&
+                  visible: _animationController.value >= 0.18 &&
                       _animationController.value <= 0.36,
                   fixedSize: false,
                   color: color,
@@ -199,8 +198,7 @@ class QuadSpinState extends State<QuadSpin>
                 ),
               ),
               _rotatingDots(
-                visible:
-                    _animationController.value >= 0.36 &&
+                visible: _animationController.value >= 0.36 &&
                     _animationController.value <= 0.60,
                 color: color,
                 dotSize: dotMinSize,
@@ -221,8 +219,7 @@ class QuadSpinState extends State<QuadSpin>
                   end: 0.78,
                 ),
                 child: _animatingDots(
-                  visible:
-                      _animationController.value >= 0.60 &&
+                  visible: _animationController.value >= 0.60 &&
                       _animationController.value <= 0.78,
                   fixedSize: false,
                   color: color,
@@ -238,8 +235,7 @@ class QuadSpinState extends State<QuadSpin>
                 ),
               ),
               _animatingDots(
-                visible:
-                    _animationController.value >= 0.78 &&
+                visible: _animationController.value >= 0.78 &&
                     _animationController.value <= 1.0,
                 fixedSize: true,
                 color: color,

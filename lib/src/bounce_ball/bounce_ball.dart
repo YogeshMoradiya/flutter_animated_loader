@@ -56,8 +56,7 @@ class BounceBallState extends State<BounceBall>
                 ),
               ),
               Visibility(
-                visible:
-                    _animationController.value >= 0.4 &&
+                visible: _animationController.value >= 0.4 &&
                     _animationController.value <= 0.45,
                 child: Align(
                   alignment: Alignment.bottomCenter,
@@ -79,8 +78,7 @@ class BounceBallState extends State<BounceBall>
                 ),
               ),
               Visibility(
-                visible:
-                    _animationController.value >= 0.45 &&
+                visible: _animationController.value >= 0.45 &&
                     _animationController.value <= 0.5,
                 child: Align(
                   alignment: Alignment.bottomCenter,

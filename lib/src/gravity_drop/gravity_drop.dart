@@ -46,25 +46,25 @@ class GravityDropState extends State<GravityDrop>
     //     (innerBoxSize - innerBoxSize / 2 - innerPadding / 2);
 
     Color fallingFromTopDotColor() => _animationController.eval(
-      ColorTween(begin: color.withAlpha(0), end: color),
-      curve: const Interval(0.0, 0.2, curve: Curves.easeInOut),
-    )!;
+          ColorTween(begin: color.withAlpha(0), end: color),
+          curve: const Interval(0.0, 0.2, curve: Curves.easeInOut),
+        )!;
 
     double dotWidth() => _animationController.evalDouble(
-      from: size * 0.01,
-      to: dotFinalSize,
-      begin: 0.15,
-      end: 0.3,
-      curve: Curves.easeInOut,
-    );
+          from: size * 0.01,
+          to: dotFinalSize,
+          begin: 0.15,
+          end: 0.3,
+          curve: Curves.easeInOut,
+        );
 
     double dotHeight() => _animationController.evalDouble(
-      from: size * 0.1,
-      to: dotFinalSize,
-      begin: 0.15,
-      end: 0.3,
-      curve: Curves.easeInOut,
-    );
+          from: size * 0.1,
+          to: dotFinalSize,
+          begin: 0.15,
+          end: 0.3,
+          curve: Curves.easeInOut,
+        );
 
     return Container(
       width: size,

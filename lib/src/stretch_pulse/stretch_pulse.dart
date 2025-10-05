@@ -13,8 +13,8 @@ class StretchPulse extends StatefulWidget {
     required this.size,
     required this.color,
     // required this.time,
-  }) : innerHeight = size / 1.3,
-       dotWidth = size / 8;
+  })  : innerHeight = size / 1.3,
+        dotWidth = size / 8;
 
   @override
   State<StretchPulse> createState() => _StretchPulseState();

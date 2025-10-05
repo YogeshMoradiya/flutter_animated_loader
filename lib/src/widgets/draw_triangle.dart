@@ -21,9 +21,10 @@ class Triangle extends CustomPainter {
     required Offset start,
     required Offset end,
     required MiddleLine middleLine,
-  }) => CustomPaint(
-    painter: Triangle._(color, strokeWidth, start, end, middleLine),
-  );
+  }) =>
+      CustomPaint(
+        painter: Triangle._(color, strokeWidth, start, end, middleLine),
+      );
 
   @override
   void paint(Canvas canvas, Size size) {

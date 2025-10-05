@@ -72,8 +72,7 @@ class HeartBeatState extends State<HeartBeat>
               ),
             ),
             Visibility(
-              visible:
-                  _animationController.value <= 0.8 &&
+              visible: _animationController.value <= 0.8 &&
                   _animationController.value >= 0.7,
               child: Transform.scale(
                 scale: _animationController.evalDouble(

@@ -1,1 +1,1 @@
-export 'src/loading_animation_widget.dart';
+export 'src/flutter_animated_loader.dart';

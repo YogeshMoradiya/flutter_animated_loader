@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_loader/src/loading_animation_widget.dart';
+import 'package:flutter_animated_loader/flutter_animated_loader.dart';
 
-const Color _kAppColor = Color(0xFF1C1C1E); // dark theme
-const double _kSize = 100;
+const Color _kAppColor = Color(0xFF1C1C1E);
+const double _kSize = 80;
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         canvasColor: _kAppColor,
         snackBarTheme: const SnackBarThemeData(
           backgroundColor: Colors.deepPurple,
-          contentTextStyle: TextStyle(fontSize: 18, color: Colors.white),
+          contentTextStyle: TextStyle(fontSize: 18, color: Colors.black),
         ),
       ),
       home: const HomePage(),
@@ -27,104 +27,63 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  HomePageState createState() => HomePageState();
-}
-
-class HomePageState extends State<HomePage> {
-  late PageController _pageController;
-  int _currentPage = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController(initialPage: _currentPage);
-  }
-
-  void _onTapNext() {
-    if (_currentPage + 1 < listOfAnimations.length) {
-      _pageController.jumpToPage(_currentPage + 1);
-      setState(() => _currentPage++);
-    } else {
-      _pageController.animateToPage(
-        0,
-        duration: const Duration(milliseconds: 800),
-        curve: Curves.ease,
-      );
-      setState(() => _currentPage = 0);
-    }
-  }
-
-  void _onTapPrevious() {
-    if (_currentPage == 0) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('There is nothing left 🌚')));
-    } else {
-      _pageController.jumpToPage(_currentPage - 1);
-      setState(() => _currentPage--);
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return PageView(
-      physics: const NeverScrollableScrollPhysics(),
-      controller: _pageController,
-      children: listOfAnimations
-          .map(
-            (appBody) => Scaffold(
-              body: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'flutter_animated_loader',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: _kAppColor,
+        elevation: 0,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: GridView.builder(
+          itemCount: listOfAnimations.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, // 2 items per row
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            childAspectRatio: 0.9,
+          ),
+          itemBuilder: (context, index) {
+            final appBody = listOfAnimations[index];
+            return Container(
+              decoration: BoxDecoration(
+                color: Colors.white.withAlpha(1),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.black, width: 0.6),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SafeArea(
-                    bottom: false,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        appBody.title,
-                        style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                        ),
+                  Expanded(
+                    child: Center(child: appBody.widget),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0, vertical: 6.0),
+                    child: Text(
+                      appBody.title,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
                       ),
                     ),
                   ),
-                  Expanded(child: Center(child: appBody.widget)),
                 ],
               ),
-              bottomNavigationBar: SafeArea(
-                top: false,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        icon: const Icon(
-                          Icons.chevron_left_rounded,
-                          color: Colors.white,
-                        ),
-                        onPressed: _onTapPrevious,
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.chevron_right_rounded,
-                          color: Colors.white,
-                        ),
-                        onPressed: _onTapNext,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          )
-          .toList(),
+            );
+          },
+        ),
+      ),
     );
   }
 }
@@ -136,40 +95,33 @@ class AppBody {
 }
 
 final listOfAnimations = <AppBody>[
-  const AppBody(
-    'flutter_animated_loader',
-    Text(
-      'Total animations: 20',
-      textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 18, color: Colors.white),
-    ),
-  ),
+  /// Add new animations here
   AppBody(
     'Arc Trio',
-    LoadingAnimationWidget.arcTrio(color: Colors.cyanAccent, size: _kSize),
+    FlutterAnimatedLoader.arcTrio(color: Colors.cyanAccent, size: _kSize),
   ),
   AppBody(
     'Horizontal Spin',
-    LoadingAnimationWidget.horizontalSpin(
+    FlutterAnimatedLoader.horizontalSpin(
       color: Colors.orangeAccent,
       size: _kSize,
     ),
   ),
   AppBody(
     'Aurora Wave',
-    LoadingAnimationWidget.auroraWave(color: Colors.purpleAccent, size: _kSize),
+    FlutterAnimatedLoader.auroraWave(color: Colors.purpleAccent, size: _kSize),
   ),
   AppBody(
     'Bounce Ball',
-    LoadingAnimationWidget.bounceBall(color: Colors.tealAccent, size: _kSize),
+    FlutterAnimatedLoader.bounceBall(color: Colors.tealAccent, size: _kSize),
   ),
   AppBody(
     'Double Arc',
-    LoadingAnimationWidget.doubleArc(color: Colors.amber, size: _kSize),
+    FlutterAnimatedLoader.doubleArc(color: Colors.amber, size: _kSize),
   ),
   AppBody(
     'Color Flicker',
-    LoadingAnimationWidget.colorFlicker(
+    FlutterAnimatedLoader.colorFlicker(
       leftDotColor: Colors.redAccent,
       rightDotColor: Colors.blueAccent,
       size: _kSize,
@@ -177,11 +129,11 @@ final listOfAnimations = <AppBody>[
   ),
   AppBody(
     'Newton Swing',
-    LoadingAnimationWidget.newtonSwing(color: Colors.greenAccent, size: _kSize),
+    FlutterAnimatedLoader.newtonSwing(color: Colors.greenAccent, size: _kSize),
   ),
   AppBody(
     'Ring Pulse',
-    LoadingAnimationWidget.ringPulse(
+    FlutterAnimatedLoader.ringPulse(
       color: Colors.white,
       size: _kSize,
       secondCircleColor: Colors.redAccent,
@@ -190,62 +142,62 @@ final listOfAnimations = <AppBody>[
   ),
   AppBody(
     'Tri Spin',
-    LoadingAnimationWidget.triSpin(color: Colors.pinkAccent, size: _kSize),
+    FlutterAnimatedLoader.triSpin(color: Colors.pinkAccent, size: _kSize),
   ),
   AppBody(
     'Stagger Wave',
-    LoadingAnimationWidget.staggerWave(
+    FlutterAnimatedLoader.staggerWave(
       color: Colors.lightBlueAccent,
       size: _kSize,
     ),
   ),
   AppBody(
     'Splash Drop',
-    LoadingAnimationWidget.splashDrop(
+    FlutterAnimatedLoader.splashDrop(
       color: Colors.lightGreenAccent,
       size: _kSize,
     ),
   ),
   AppBody(
     'Gravity Drop',
-    LoadingAnimationWidget.gravityDrop(
+    FlutterAnimatedLoader.gravityDrop(
       color: Colors.deepOrangeAccent,
       size: _kSize,
     ),
   ),
   AppBody(
     'Heart Beat',
-    LoadingAnimationWidget.heartBeat(color: Colors.redAccent, size: _kSize),
+    FlutterAnimatedLoader.heartBeat(color: Colors.redAccent, size: _kSize),
   ),
   AppBody(
     'Hexa Spin',
-    LoadingAnimationWidget.hexaSpin(color: Colors.purpleAccent, size: _kSize),
+    FlutterAnimatedLoader.hexaSpin(color: Colors.purpleAccent, size: _kSize),
   ),
   AppBody(
     'Pulse Track',
-    LoadingAnimationWidget.pulseTrack(color: Colors.tealAccent, size: _kSize),
+    FlutterAnimatedLoader.pulseTrack(color: Colors.tealAccent, size: _kSize),
   ),
   AppBody(
     'Quad Spin',
-    LoadingAnimationWidget.quadSpin(color: Colors.orangeAccent, size: _kSize),
+    FlutterAnimatedLoader.quadSpin(color: Colors.orangeAccent, size: _kSize),
   ),
   AppBody(
     'Triangle Orbit',
-    LoadingAnimationWidget.triangleOrbit(
+    FlutterAnimatedLoader.triangleOrbit(
       color: Colors.cyanAccent,
       size: _kSize,
     ),
   ),
   AppBody(
     'Triangular Dot',
-    LoadingAnimationWidget.triangularDot(
+    FlutterAnimatedLoader.triangularDot(
       color: Colors.amberAccent,
       size: _kSize,
     ),
   ),
   AppBody(
     'Twist Orbit',
-    LoadingAnimationWidget.twistOrbit(
+    FlutterAnimatedLoader.twistOrbit(
       leftDotColor: Colors.redAccent,
       rightDotColor: Colors.blueAccent,
       size: _kSize,

@@ -10,11 +10,12 @@ class Ring extends CustomPainter {
     required Color color,
     required double size,
     required double strokeWidth,
-  }) => SizedBox(
-    width: size,
-    height: size,
-    child: CustomPaint(painter: Ring(color, strokeWidth)),
-  );
+  }) =>
+      SizedBox(
+        width: size,
+        height: size,
+        child: CustomPaint(painter: Ring(color, strokeWidth)),
+      );
 
   @override
   void paint(Canvas canvas, Size size) {
